@@ -163,10 +163,11 @@
 }
 
 .discogs-page {
-  max-width: 822px;
+  width: 100%;
+  max-width: none;
   min-height: 100vh;
-  margin-inline: auto;
-  border-inline: 1px solid var(--color-border);
+  margin-inline: 0;
+  border-inline: 0;
   font: 13px/1.22 Arial, Helvetica, sans-serif;
 }
 
@@ -291,9 +292,9 @@
 
 .classic-main {
   display: grid;
-  grid-template-columns: 155px minmax(0, 1fr);
-  gap: 20px;
-  padding: 20px 19px 24px;
+  grid-template-columns: minmax(180px, 19%) minmax(0, 1fr);
+  gap: 24px;
+  padding: 20px 24px 24px;
 }
 
 .classic-sidebar {
@@ -396,6 +397,27 @@
   padding: 4px 3px;
   border-top: 1px solid oklch(0.56 0 0);
   color: oklch(0.24 0 0);
+}
+
+@media (min-width: 1024px) {
+  .discogs-header {
+    padding-inline: 34px 18px;
+  }
+
+  .classic-main {
+    grid-template-columns: minmax(190px, 19%) minmax(0, 1fr);
+    gap: 30px;
+    padding-inline: 28px;
+  }
+
+  .welcome-row {
+    grid-template-columns: minmax(300px, 0.82fr) minmax(280px, 1fr);
+    gap: 20px;
+  }
+
+  .classic-content {
+    max-width: 1200px;
+  }
 }
 
 .search-feedback {
